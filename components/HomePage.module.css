@@ -1,0 +1,8 @@
+.hero {
+  background: linear-gradient(rgb(164, 98, 41), steelblue);
+  background-image: url("../assets/home/background-home-desktop.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom center;
+  height: 100vh;
+}
