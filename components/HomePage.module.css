@@ -1,8 +1,21 @@
 .hero {
   background: linear-gradient(rgb(164, 98, 41), steelblue);
-  background-image: url("../assets/home/background-home-desktop.jpg");
+
+  background-image: url("../assets/home/background-home-mobile.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: bottom center;
-  height: 100vh;
+}
+
+@media (min-width: 35em) {
+  .hero {
+    background-position: center center;
+    background-image: url("../assets/home/background-home-tablet.jpg");
+  }
+}
+
+@media (min-width: 45em) {
+  .hero {
+    background-image: url("../assets/home/background-home-desktop.jpg");
+  }
 }

@@ -4,7 +4,7 @@
   --ff-header: "Bellefair", serif;
   --ff-content: "Barlow Condensed", sans-serif;
 
-  --clr-black: hsl(230, 35%, 7%);
+  --clr-black: rgb(12, 14, 24);
   --clr-blue: hsl(231, 77%, 90%);
   --clr-white: hsl(0, 0%, 100%);
 }
@@ -21,6 +21,13 @@
   margin: 0;
   padding: 0;
   font: inherit;
+}
+
+a,
+ul,
+li,
+Link {
+  text-decoration: none;
 }
 
 h1,
