@@ -90,6 +90,8 @@ const Wrapper = styled.nav`
     isolation: isolate;
     display: flex;
     padding: 13rem 2rem 0 3rem;
+    z-index: 1;
+    backdrop-filter: blur(2rem);
 
     &::before {
       content: "";

@@ -39,11 +39,12 @@ const Wrapper = styled.section`
   .flex-container {
     text-align: center;
     justify-content: center;
-    width: 100vw;
 
     .details {
       text-align: center;
       padding: 2rem;
+      width: 90%;
+      margin: 0 auto;
 
       h6 {
         font-size: 2rem;
@@ -56,8 +57,34 @@ const Wrapper = styled.section`
       }
 
       p {
-        font-weight: 200;
-        line-height: 1.8;
+        font-weight: 100;
+        line-height: 1.6;
+        font-size: 2rem;
+        letter-spacing: 0.1rem;
+      }
+    }
+
+    .explore {
+      padding: 8rem 0 6rem;
+      display: flex;
+      justify-content: center;
+      /* width: 50%; */
+      .text-container {
+        width: 21rem;
+        height: 21rem;
+        background-color: var(--clr-white);
+        border-radius: 50%;
+        position: relative;
+
+        h4 {
+          position: absolute;
+          font-size: 2.8rem;
+          top: 50%;
+          letter-spacing: 0.2rem;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          color: var(--clr-black);
+        }
       }
     }
   }
