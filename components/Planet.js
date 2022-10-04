@@ -95,14 +95,11 @@ const Wrapper = styled.section`
           transition: opacity 250ms ease-in;
         }
 
-        &:focus::after {
-          opacity: 1;
-        }
-
+        &:active::after,
         &:hover::after {
           opacity: 1;
         }
-      }
+      
     }
 
     .planet-name {
