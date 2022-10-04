@@ -6,7 +6,6 @@ import Link from "next/link";
 
 const Planet = ({ planetData }) => {
   const { name, images, description, distance, travel } = planetData;
-  console.log(images.webp);
   return (
     <Wrapper>
       <div className={style.background}>

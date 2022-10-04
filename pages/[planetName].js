@@ -16,9 +16,9 @@ export const getStaticPaths = async () => {
     paths: [
       {
         params: { planetName: "Moon" },
-        params: { planetName: "Mars" },
-        params: { planetName: "Europa" },
-        params: { planetName: "Titan" },
+        // params: { planetName: "Mars" },
+        // params: { planetName: "Titan" },
+        // params: { planetName: "Europa" },
       },
     ],
     fallback: true,
