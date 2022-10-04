@@ -3,12 +3,8 @@ import Planet from "../components/Planet";
 import { buildFilePath, extractFeedback } from "../helper/helper";
 
 const Destination = ({ data }) => {
-  console.log(data);
-  return (
-    <>
-      <Planet planetData={data} />
-    </>
-  );
+  // console.log(data);
+  return <>{/* <Planet planetData={data} /> */}</>;
 };
 
 export const getStaticPaths = async () => {
@@ -17,8 +13,8 @@ export const getStaticPaths = async () => {
       {
         params: { planetName: "Moon" },
         // params: { planetName: "Mars" },
-        // params: { planetName: "Titan" },
         // params: { planetName: "Europa" },
+        // params: { planetName: "Titan" },
       },
     ],
     fallback: true,
