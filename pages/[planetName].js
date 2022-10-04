@@ -4,7 +4,11 @@ import { buildFilePath, extractFeedback } from "../helper/helper";
 
 const Destination = ({ data }) => {
   // console.log(data);
-  return <>{/* <Planet planetData={data} /> */}</>;
+  return (
+    <>
+      <Planet planetData={data} />
+    </>
+  );
 };
 
 export const getStaticPaths = async () => {
