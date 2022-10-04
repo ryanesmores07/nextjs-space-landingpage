@@ -38,7 +38,6 @@ const Wrapper = styled.section`
 
   .flex-container {
     text-align: center;
-    justify-content: center;
 
     .details {
       text-align: center;
@@ -89,6 +88,7 @@ const Wrapper = styled.section`
     }
   }
 
+  /*  
   @media (min-width: 50em) {
     .flex-container {
       position: absolute;
@@ -137,6 +137,7 @@ const Wrapper = styled.section`
       }
     }
   }
+  */
 `;
 
 export default HomePage;

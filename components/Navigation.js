@@ -11,7 +11,7 @@ const Navigation = () => {
 
   return (
     <Wrapper>
-      <div className="flex-container open">
+      <div className="center">
         {isOpen && (
           <aside className="sidebar ">
             <img
@@ -23,11 +23,11 @@ const Navigation = () => {
             <ul role="list" className="links">
               <li>
                 <span>00</span>
-                <Link href="#"> HOME</Link>
+                <Link href="/"> HOME</Link>
               </li>
               <li>
                 <span>01</span>
-                <Link href="#"> DESTINATION</Link>
+                <Link href="/Moon"> DESTINATION</Link>
               </li>
               <li>
                 <span>03</span>
@@ -40,7 +40,10 @@ const Navigation = () => {
             </ul>
           </aside>
         )}
-        <img src="logo.svg" alt="" className="logo" />
+        <Link href="/">
+          <img src="logo.svg" alt="" className="logo" />
+        </Link>
+
         {!isOpen && (
           <img
             src="icon-hamburger.svg"
@@ -59,12 +62,12 @@ const Wrapper = styled.nav`
   max-width: 100%;
   width: 100%;
 
-  .flex-container {
-    /* position: fixed; */
+  .center {
     display: flex;
     width: 100%;
     justify-content: space-between;
     align-items: flex-start;
+
     padding: 3rem;
 
     .logo {
@@ -81,7 +84,7 @@ const Wrapper = styled.nav`
   }
 
   .sidebar {
-    /* background-color: var(--clr-black); */
+    background-color: var(--clr-black);
     width: 65%;
     position: fixed;
     top: 0;
@@ -127,6 +130,9 @@ const Wrapper = styled.nav`
         font-size: 1.8rem;
       }
     }
+  }
+
+  @media (mid-width: 35em) {
   }
 `;
 
