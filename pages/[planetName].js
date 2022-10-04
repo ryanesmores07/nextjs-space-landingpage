@@ -4,24 +4,18 @@ import { buildFilePath, extractFeedback } from "../helper/helper";
 
 const Destination = ({ data }) => {
   // console.log(data);
-  return (
-    <>
-      <Planet planetData={data} />
-    </>
-  );
+  return <>{<Planet planetData={data} />}</>;
 };
 
 export const getStaticPaths = async () => {
   return {
     paths: [
-      {
-        params: { planetName: "Moon" },
-        // params: { planetName: "Mars" },
-        // params: { planetName: "Europa" },
-        // params: { planetName: "Titan" },
-      },
+      { params: { planetName: "Moon" } },
+      { params: { planetName: "Mars" } },
+      { params: { planetName: "Europa" } },
+      { params: { planetName: "Titan" } },
     ],
-    fallback: true,
+    fallback: false,
   };
 };
 
@@ -35,6 +29,10 @@ export const getStaticProps = async (context) => {
   const name = data.destinations.find(
     (destination) => destination.name === planetName
   );
+
+  if (!name) {
+    return { notFound: true };
+  }
 
   return {
     props: {
