@@ -1,0 +1,6 @@
+.background {
+  background-image: url("../public/assets/crew/background-crew-mobile.jpg");
+  background-repeat: repeat;
+  background-size: cover;
+  background-position: bottom center;
+}
