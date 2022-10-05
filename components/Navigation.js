@@ -1,17 +1,14 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import Link from "next/link";
+import { useGlobalContext } from "../context/context";
 
 const Navigation = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggleHandler = () => {
-    setIsOpen(!isOpen);
-  };
+  const { toggleHandler, isOpen } = useGlobalContext();
 
   return (
     <Wrapper>
-      <div className="center">
+      <div className="container">
         {isOpen && (
           <aside className="sidebar ">
             <img
@@ -20,7 +17,7 @@ const Navigation = () => {
               className="close-button"
               onClick={toggleHandler}
             />
-            <ul role="list" className="links">
+            <ul role="list" className="links" onClick={toggleHandler}>
               <li>
                 <span>00</span>
                 <Link href="/"> HOME</Link>
@@ -30,11 +27,11 @@ const Navigation = () => {
                 <Link href="/Moon"> DESTINATION</Link>
               </li>
               <li>
-                <span>03</span>
-                <Link href="#"> CREW</Link>
+                <span>02</span>
+                <Link href="/Douglas-Hurley"> CREW</Link>
               </li>
               <li>
-                <span>04</span>
+                <span>03</span>
                 <Link href="#"> TECHNOLOGY</Link>
               </li>
             </ul>
@@ -62,7 +59,7 @@ const Wrapper = styled.nav`
   max-width: 100%;
   width: 100%;
 
-  .center {
+  .container {
     display: flex;
     width: 100%;
     justify-content: space-between;
@@ -84,7 +81,7 @@ const Wrapper = styled.nav`
   }
 
   .sidebar {
-    background-color: var(--clr-black);
+    background-color: transparent;
     width: 65%;
     position: fixed;
     top: 0;
@@ -94,7 +91,7 @@ const Wrapper = styled.nav`
     display: flex;
     padding: 13rem 2rem 0 3rem;
     z-index: 1;
-    backdrop-filter: blur(2rem);
+    backdrop-filter: blur(3rem);
 
     &::before {
       content: "";
@@ -105,7 +102,7 @@ const Wrapper = styled.nav`
       bottom: 0;
       right: 0;
       background-color: var(--clr-black);
-      opacity: 0.8;
+      opacity: 0.3;
     }
 
     .close-button {
@@ -128,6 +125,11 @@ const Wrapper = styled.nav`
         font-family: var(--ff-content);
         font-weight: 300;
         font-size: 1.8rem;
+
+        span {
+          font-weight: 700;
+          margin-right: 0.5rem;
+        }
       }
     }
   }

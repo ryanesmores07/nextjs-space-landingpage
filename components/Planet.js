@@ -6,12 +6,13 @@ import Link from "next/link";
 
 const Planet = ({ planetData }) => {
   const { name, images, description, distance, travel } = planetData;
+
   return (
     <Wrapper>
       <div className={style.background}>
         <Navigation />
         <div className="flex-container">
-          <h6>PICK YOUR DESTINATION</h6>
+          <h6 className="header">PICK YOUR DESTINATION</h6>
           <img className="planet-image" src={images.webp} alt="" />
           <ul className="links" role="list">
             <li>
@@ -29,6 +30,14 @@ const Planet = ({ planetData }) => {
           </ul>
           <h2 className="planet-name">{name.toUpperCase()}</h2>
           <p className="planet-description">{description}</p>
+          <h6 className="sub-header">AVG. DISTANCE</h6>
+          <h4 className="planet-distance margin-bottom">
+            {distance.toUpperCase()}
+          </h4>
+          <h6 className="sub-header">EST. TRAVEL TIME</h6>
+          <h4 className="planet-travel margin-bottom">
+            {travel.toUpperCase()}
+          </h4>
         </div>
       </div>
     </Wrapper>
@@ -41,14 +50,19 @@ const Wrapper = styled.section`
   margin: 0 auto;
   text-align: center;
 
+  .margin-bottom {
+    margin-bottom: 3rem;
+  }
+
   .flex-container {
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    padding-bottom: 3rem;
     /* gap: 1rem; */
 
-    h6 {
+    .header {
       font-size: 1.8rem;
       margin-bottom: 4rem;
       &::before {
@@ -73,7 +87,7 @@ const Wrapper = styled.section`
       font-family: var(--ff-content);
       font-weight: 100;
       cursor: pointer;
-      margin-bottom: 2rem;
+      margin-bottom: 3rem;
 
       a {
         color: var(--clr-white);
@@ -99,12 +113,12 @@ const Wrapper = styled.section`
         &:hover::after {
           opacity: 1;
         }
-      
+      }
     }
 
     .planet-name {
       font-size: 7rem;
-      /* line-height: 0; */
+      line-height: 1.3;
     }
 
     .planet-description {
@@ -115,17 +129,31 @@ const Wrapper = styled.section`
       line-height: 1.6;
       font-weight: 100;
       position: relative;
-
+      padding-bottom: 10rem;
       &::after {
         content: "";
         position: absolute;
         top: 20rem;
         left: 0;
-        bottom: 5rem;
-        height: 0.5px;
+        height: 0.04px;
+        transform: scaleX(1.1);
+        opacity: 0.4;
+        text-align: center;
         width: 100%;
-        background-color: red;
+        background-color: var(--clr-white);
       }
+    }
+
+    .sub-header {
+      font-size: 1.6rem;
+      color: var(--clr-blue);
+      margin-bottom: 1rem;
+      font-weight: 100;
+    }
+
+    .planet-distance,
+    .planet-travel {
+      font-size: 3.8rem;
     }
   }
 `;

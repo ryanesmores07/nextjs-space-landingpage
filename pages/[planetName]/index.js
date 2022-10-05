@@ -1,6 +1,6 @@
 import React from "react";
-import Planet from "../components/Planet";
-import { buildFilePath, extractFeedback } from "../helper/helper";
+import Planet from "../../components/Planet";
+import { buildFilePath, extractFeedback } from "../../helper/helper";
 
 const Destination = ({ data }) => {
   // console.log(data);
