@@ -28,11 +28,11 @@ const Navigation = () => {
               </li>
               <li>
                 <span>02</span>
-                <Link href="/Douglas-Hurley"> CREW</Link>
+                <Link href="/crew"> CREW</Link>
               </li>
               <li>
                 <span>03</span>
-                <Link href="#"> TECHNOLOGY</Link>
+                <Link href="/technology"> TECHNOLOGY</Link>
               </li>
             </ul>
           </aside>
