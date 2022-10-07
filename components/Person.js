@@ -74,10 +74,13 @@ const Wrapper = styled.section`
       button {
         border: none;
         color: var(--clr-white);
-        background-color: transparent;
+        background: none;
         opacity: 0.3;
         transition: opacity 250ms ease-out;
+        cursor: pointer;
+
         &:hover,
+        &:focus,
         &:active {
           opacity: 1;
         }

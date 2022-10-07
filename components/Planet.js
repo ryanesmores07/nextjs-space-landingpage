@@ -108,9 +108,11 @@ const Wrapper = styled.section`
           opacity: 0;
           transition: opacity 250ms ease-in;
         }
-
-        &:active::after,
         &:hover::after {
+          opacity: 0.4;
+        }
+        &:active::after,
+        &:focus::after {
           opacity: 1;
         }
       }
