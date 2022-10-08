@@ -8,7 +8,11 @@ const Person = ({ data }) => {
   const [index, setIndex] = React.useState(0);
   const { name, bio, images, role } = data[index];
 
-  const nextPerson = index;
+  const focus = React.useRef();
+
+  React.useEffect(() => {
+    focus.current.focus();
+  }, []);
 
   return (
     <Wrapper>
@@ -22,7 +26,9 @@ const Person = ({ data }) => {
           </div>
           <ul role="list" style={{ display: "flex" }}>
             <li>
-              <button onClick={() => setIndex(0)}>⚪️</button>
+              <button onClick={() => setIndex(0)} ref={focus}>
+                ⚪️
+              </button>
             </li>
             <li>
               <button onClick={() => setIndex(1)}>⚪️</button>
@@ -49,7 +55,7 @@ const Wrapper = styled.section`
   text-align: center;
 
   .header {
-    font-size: 1.8rem;
+    font-size: 2rem;
     margin-bottom: 4rem;
     font-weight: 100;
     &::before {
@@ -79,10 +85,14 @@ const Wrapper = styled.section`
         transition: opacity 250ms ease-out;
         cursor: pointer;
 
-        &:hover,
         &:focus,
         &:active {
+          outline-style: initial;
           opacity: 1;
+        }
+
+        &:hover {
+          opacity: 0.6;
         }
       }
     }

@@ -6,7 +6,14 @@ import Navigation from "../components/Navigation";
 const Technology = ({ data }) => {
   const [index, setIndex] = React.useState(0);
   const { name, images, description } = data[index];
-  console.log(name);
+
+  const focus = React.useRef();
+
+  React.useEffect(() => {
+    focus.current.focus();
+    return () => {};
+  }, []);
+
   return (
     <Wrapper>
       <div className={style.background}>
@@ -16,7 +23,25 @@ const Technology = ({ data }) => {
           <div className="image-container">
             <img className="tech-image" src={images.landscape} alt="" />
           </div>
-
+          <div className="number-buttons">
+            <ul role="list" style={{ display: "flex" }}>
+              <li>
+                <button
+                  onClick={() => setIndex(0)}
+                  ref={focus}
+                  autoFocus={true}
+                >
+                  1
+                </button>
+              </li>
+              <li>
+                <button onClick={() => setIndex(1)}>2</button>
+              </li>
+              <li>
+                <button onClick={() => setIndex(2)}>3</button>
+              </li>
+            </ul>
+          </div>
           <h4 className="tech-term">THE TERMINOLOGY...</h4>
           <h3 className="tech-name">{name.toUpperCase()}</h3>
           <p className="tech-description">{description}</p>
@@ -34,11 +59,11 @@ const Wrapper = styled.section`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding-bottom: 5rem;
+    padding-bottom: 10rem;
     /* overflow: hidden; */
 
     .header {
-      font-size: 1.8rem;
+      font-size: 2rem;
       margin-bottom: 4rem;
       &::before {
         content: "03";
@@ -58,6 +83,34 @@ const Wrapper = styled.section`
         background-position: right center;
         transform: scaleX(1.01);
         transform-origin: left;
+      }
+    }
+
+    .number-buttons {
+      ul {
+        gap: 2rem;
+        padding: 3rem;
+        button {
+          height: 5rem;
+          width: 5rem;
+          border-radius: 50%;
+          color: var(--clr-white);
+          background-color: transparent;
+          border: 1px solid rgba(255, 255, 255, 0.2);
+          font-size: 2.5rem;
+          cursor: pointer;
+
+          &:active,
+          &:focus {
+            outline-style: initial;
+            background-color: var(--clr-white);
+            color: var(--clr-black);
+          }
+
+          &:hover {
+            border: 1px solid rgba(255, 255, 255, 0.8);
+          }
+        }
       }
     }
 

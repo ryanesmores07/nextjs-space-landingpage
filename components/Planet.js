@@ -7,6 +7,13 @@ import Link from "next/link";
 const Planet = ({ planetData }) => {
   const { name, images, description, distance, travel } = planetData;
 
+  const focus = React.useRef();
+
+  React.useEffect(() => {
+    focus.current.focus();
+    return () => {};
+  }, []);
+
   return (
     <Wrapper>
       <div className={style.background}>
@@ -15,7 +22,7 @@ const Planet = ({ planetData }) => {
           <h6 className="header">PICK YOUR DESTINATION</h6>
           <img className="planet-image" src={images.webp} alt="" />
           <ul className="links" role="list">
-            <li>
+            <li ref={focus}>
               <Link href="/Moon">MOON</Link>
             </li>
             <li>
@@ -63,7 +70,7 @@ const Wrapper = styled.section`
     /* gap: 1rem; */
 
     .header {
-      font-size: 1.8rem;
+      font-size: 2rem;
       margin-bottom: 4rem;
       &::before {
         content: "01";
@@ -89,31 +96,33 @@ const Wrapper = styled.section`
       cursor: pointer;
       margin-bottom: 3rem;
 
-      a {
-        color: var(--clr-white);
-        position: relative;
+      li {
+        a {
+          color: var(--clr-white);
+          position: relative;
 
-        &:focus {
-          outline: none;
-        }
+          &:focus {
+            outline: none;
+          }
 
-        &::after {
-          content: "";
-          position: absolute;
-          top: 3.2rem;
-          left: 0;
-          height: 3px;
-          width: 100%;
-          background-color: white;
-          opacity: 0;
-          transition: opacity 250ms ease-in;
-        }
-        &:hover::after {
-          opacity: 0.4;
-        }
-        &:active::after,
-        &:focus::after {
-          opacity: 1;
+          &::after {
+            content: "";
+            position: absolute;
+            top: 3.2rem;
+            left: 0;
+            height: 3px;
+            width: 100%;
+            background-color: white;
+            opacity: 0;
+            transition: opacity 250ms ease-in;
+          }
+          &:hover::after {
+            opacity: 0.4;
+          }
+          &:active::after,
+          &:focus::after {
+            opacity: 1;
+          }
         }
       }
     }
