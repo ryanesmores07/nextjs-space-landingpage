@@ -96,7 +96,7 @@ const Wrapper = styled.section`
           border-radius: 50%;
           box-shadow: 0 0 0 6rem rgba(255, 255, 255, 0.1);
           cursor: pointer;
-          transition: opacity 200ms ease-in;
+          transition: opacity 300ms ease-in-out;
           opacity: 0;
         }
 

@@ -7,12 +7,7 @@ import Link from "next/link";
 const Planet = ({ planetData }) => {
   const { name, images, description, distance, travel } = planetData;
 
-  const focus = React.useRef();
-
-  React.useEffect(() => {
-    focus.current.focus();
-    return () => {};
-  }, []);
+  const [active, setActive] = React.useState(true);
 
   return (
     <Wrapper>
@@ -22,8 +17,16 @@ const Planet = ({ planetData }) => {
           <h6 className="header">PICK YOUR DESTINATION</h6>
           <img className="planet-image" src={images.webp} alt="" />
           <ul className="links" role="list">
-            <li ref={focus}>
-              <Link href="/Moon">MOON</Link>
+            <li>
+              <Link
+                href="/Moon"
+                onClick={() => {
+                  setActive(true);
+                }}
+                className={active ? "active-state" : ""}
+              >
+                MOON
+              </Link>
             </li>
             <li>
               <Link href="/Mars">MARS</Link>
@@ -116,6 +119,7 @@ const Wrapper = styled.section`
             opacity: 0;
             transition: opacity 250ms ease-in;
           }
+
           &:hover::after {
             opacity: 0.4;
           }

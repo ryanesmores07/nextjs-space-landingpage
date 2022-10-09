@@ -74,6 +74,7 @@ const Wrapper = styled.nav`
 
     .toggle {
       height: 3rem;
+      cursor: pointer;
     }
   }
 
@@ -111,6 +112,7 @@ const Wrapper = styled.nav`
       position: absolute;
       top: 3rem;
       right: 3rem;
+      cursor: pointer;
     }
 
     a {
@@ -123,7 +125,7 @@ const Wrapper = styled.nav`
       li {
         margin: 1rem 1rem 3rem;
         font-family: var(--ff-content);
-        font-weight: 300;
+        font-weight: 100;
         font-size: 1.8rem;
 
         span {
@@ -134,7 +136,28 @@ const Wrapper = styled.nav`
     }
   }
 
-  @media (mid-width: 35em) {
+  @media (min-width: 35em) {
+    .close-button {
+      display: none;
+    }
+
+    .toggle {
+      display: none;
+    }
+    .sidebar {
+      width: 55%;
+      padding: 3rem;
+      bottom: 48rem;
+      .links {
+        display: flex;
+        margin: 0 auto;
+        span {
+          display: none;
+        }
+        li {
+        }
+      }
+    }
   }
 `;
 

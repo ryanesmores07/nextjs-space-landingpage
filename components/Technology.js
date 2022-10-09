@@ -1,18 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import * as style from "./Technology.module.css";
 import Navigation from "../components/Navigation";
 
 const Technology = ({ data }) => {
-  const [index, setIndex] = React.useState(0);
+  const [index, setIndex] = useState(0);
   const { name, images, description } = data[index];
-
-  const focus = React.useRef();
-
-  React.useEffect(() => {
-    focus.current.focus();
-    return () => {};
-  }, []);
 
   return (
     <Wrapper>
@@ -28,17 +21,26 @@ const Technology = ({ data }) => {
               <li>
                 <button
                   onClick={() => setIndex(0)}
-                  ref={focus}
-                  autoFocus={true}
+                  className={index === 0 ? "active-state" : ""}
                 >
                   1
                 </button>
               </li>
               <li>
-                <button onClick={() => setIndex(1)}>2</button>
+                <button
+                  onClick={() => setIndex(1)}
+                  className={index === 1 ? "active-state" : ""}
+                >
+                  2
+                </button>
               </li>
               <li>
-                <button onClick={() => setIndex(2)}>3</button>
+                <button
+                  onClick={() => setIndex(2)}
+                  className={index === 2 ? "active-state" : ""}
+                >
+                  3
+                </button>
               </li>
             </ul>
           </div>
@@ -87,6 +89,11 @@ const Wrapper = styled.section`
     }
 
     .number-buttons {
+      .active-state {
+        outline-style: initial;
+        background-color: var(--clr-white);
+        color: var(--clr-black);
+      }
       ul {
         gap: 2rem;
         padding: 3rem;
@@ -97,7 +104,7 @@ const Wrapper = styled.section`
           color: var(--clr-white);
           background-color: transparent;
           border: 1px solid rgba(255, 255, 255, 0.2);
-          font-size: 2.5rem;
+          font-size: 2rem;
           cursor: pointer;
 
           &:active,

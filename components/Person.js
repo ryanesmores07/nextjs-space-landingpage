@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import Navigation from "../components/Navigation";
 import * as style from "./Person.module.css";
-import { Carousel } from "react-responsive-carousel";
 
 const Person = ({ data }) => {
   const [index, setIndex] = React.useState(0);
@@ -26,18 +25,37 @@ const Person = ({ data }) => {
           </div>
           <ul role="list" style={{ display: "flex" }}>
             <li>
-              <button onClick={() => setIndex(0)} ref={focus}>
+              <button
+                onClick={() => setIndex(0)}
+                className={index === 0 ? "active-state" : ""}
+                ref={focus}
+              >
                 ⚪️
               </button>
             </li>
             <li>
-              <button onClick={() => setIndex(1)}>⚪️</button>
+              <button
+                onClick={() => setIndex(1)}
+                className={index === 1 ? "active-state" : ""}
+              >
+                ⚪️
+              </button>
             </li>
             <li>
-              <button onClick={() => setIndex(2)}>⚪️</button>
+              <button
+                onClick={() => setIndex(2)}
+                className={index === 2 ? "active-state" : ""}
+              >
+                ⚪️
+              </button>
             </li>
             <li>
-              <button onClick={() => setIndex(3)}>⚪️</button>
+              <button
+                onClick={() => setIndex(3)}
+                className={index === 3 ? "active-state" : ""}
+              >
+                ⚪️
+              </button>
             </li>
           </ul>
           <h4 className="crew-role">{role.toUpperCase()}</h4>
@@ -75,6 +93,10 @@ const Wrapper = styled.section`
     padding-bottom: 10rem;
 
     ul {
+      .active-state {
+        outline-style: initial;
+        opacity: 1;
+      }
       gap: 2rem;
       margin-bottom: 3.5rem;
       button {
@@ -85,11 +107,11 @@ const Wrapper = styled.section`
         transition: opacity 250ms ease-out;
         cursor: pointer;
 
-        &:focus,
+        /* &:focus,
         &:active {
           outline-style: initial;
           opacity: 1;
-        }
+        } */
 
         &:hover {
           opacity: 0.6;
