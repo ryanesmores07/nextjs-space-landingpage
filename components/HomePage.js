@@ -109,56 +109,36 @@ const Wrapper = styled.section`
     }
   }
 
-  /*  
-  @media (min-width: 50em) {
+  @media (min-width: 768px) {
     .flex-container {
-      position: absolute;
-      top: 0;
-      left: 0;
-      bottom: 15%;
-      width: 100%;
-      max-width: 100%;
-      margin: 0 auto;
-      display: flex;
-      align-items: flex-end;
-      justify-content: center;
-
+      padding-top: 10rem;
       .details {
-        width: 50%;
-        max-width: 90ch;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        h6 {
+          font-size: 2.5rem;
+          letter-spacing: 4px;
+        }
 
         h1 {
+          font-size: 18rem;
           line-height: 1.3;
         }
 
         p {
-          line-height: 1.4;
+          max-width: 70%;
+          font-size: 2.3rem;
+          letter-spacing: 1px;
         }
       }
 
       .explore {
-        display: flex;
-        justify-content: flex-end;
-        width: 50%;
-        .text-container {
-          width: 274px;
-          height: 274px;
-          background-color: var(--clr-white);
-          border-radius: 50%;
-          position: relative;
-
-          h4 {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: var(--clr-black);
-          }
-        }
+        padding: 14rem 0 10rem;
       }
     }
   }
-  */
 `;
 
 export default HomePage;

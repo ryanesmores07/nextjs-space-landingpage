@@ -7,8 +7,6 @@ import Link from "next/link";
 const Planet = ({ planetData }) => {
   const { name, images, description, distance, travel } = planetData;
 
-  const [active, setActive] = React.useState(true);
-
   return (
     <Wrapper>
       <div className={style.background}>
@@ -18,15 +16,7 @@ const Planet = ({ planetData }) => {
           <img className="planet-image" src={images.webp} alt="" />
           <ul className="links" role="list">
             <li>
-              <Link
-                href="/Moon"
-                onClick={() => {
-                  setActive(true);
-                }}
-                className={active ? "active-state" : ""}
-              >
-                MOON
-              </Link>
+              <Link href="/Moon">MOON</Link>
             </li>
             <li>
               <Link href="/Mars">MARS</Link>

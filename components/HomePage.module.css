@@ -7,15 +7,15 @@
   background-position: bottom center;
 }
 
-@media (min-width: 35em) {
+@media (min-width: 768px) {
   .hero {
     background-position: center center;
     background-image: url("../public/assets/home/background-home-tablet.jpg");
   }
 }
 
-@media (min-width: 45em) {
+/* @media (min-width: 45em) {
   .hero {
     background-image: url("../public/assets/home/background-home-desktop.jpg");
   }
-}
+} */
