@@ -43,8 +43,6 @@ const Wrapper = styled.section`
   position: relative;
 
   .flex-container {
-    text-align: center;
-
     .details {
       text-align: center;
       padding: 2rem;

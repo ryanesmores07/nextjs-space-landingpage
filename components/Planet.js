@@ -161,6 +161,12 @@ const Wrapper = styled.section`
       font-size: 3.8rem;
     }
   }
+
+  @media (min-width: 768px) {
+    .flex-container {
+      padding-top: 10rem;
+    }
+  }
 `;
 
 export default Planet;

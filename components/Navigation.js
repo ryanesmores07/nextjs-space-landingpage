@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useGlobalContext } from "../context/context";
 
 const Navigation = () => {
-  const { toggleHandler, isOpen } = useGlobalContext();
+  const { toggleHandler, isOpen, setIsOpen } = useGlobalContext();
 
   return (
     <Wrapper>
@@ -37,6 +37,22 @@ const Navigation = () => {
             </ul>
           </aside>
         )}
+        <aside className="sidebar-large">
+          <ul role="list" className="links">
+            <li>
+              <Link href="/"> HOME</Link>
+            </li>
+            <li>
+              <Link href="/Moon"> DESTINATION</Link>
+            </li>
+            <li>
+              <Link href="/crew"> CREW</Link>
+            </li>
+            <li>
+              <Link href="/technology"> TECHNOLOGY</Link>
+            </li>
+          </ul>
+        </aside>
         <Link href="/">
           <img src="logo.svg" alt="" className="logo" />
         </Link>
@@ -58,6 +74,10 @@ const Wrapper = styled.nav`
   background-color: transparent;
   max-width: 100%;
   width: 100%;
+
+  .sidebar-large {
+    display: none;
+  }
 
   .container {
     display: flex;
@@ -141,42 +161,58 @@ const Wrapper = styled.nav`
       display: none;
     }
 
+    .sidebar {
+      display: none;
+    }
+
     .toggle {
       display: none;
     }
-    .sidebar {
+
+    .sidebar-large {
+      display: flex;
       position: absolute;
       background-color: transparent;
       justify-content: center;
       width: 60%;
-      padding: 3rem;
-      bottom: 90%;
+      height: 11rem;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      padding: 4rem;
       backdrop-filter: blur(1rem);
 
       &::before {
         background-color: var(--clr-white);
         opacity: 0.05;
+        content: "";
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
       }
 
       .links {
         display: flex;
-        column-gap: 4rem;
+        column-gap: 5rem;
 
-        span {
-          display: none;
-        }
         li {
+          font-family: var(--ff-content);
+          font-weight: 100;
+          font-size: 1.8rem;
           a {
-            /* margin-right: 2rem; */
+            font-family: var(--ff-content);
             position: relative;
-            font-size: 1.5rem;
             letter-spacing: 2px;
+            color: var(--clr-white);
 
             &::after {
               content: "";
               position: absolute;
               left: 0;
-              bottom: -4rem;
+              bottom: -5rem;
               background-color: white;
               height: 5px;
               width: 100%;
