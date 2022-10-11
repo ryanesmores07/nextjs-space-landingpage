@@ -30,14 +30,20 @@ const Planet = ({ planetData }) => {
           </ul>
           <h2 className="planet-name">{name.toUpperCase()}</h2>
           <p className="planet-description">{description}</p>
-          <h6 className="sub-header">AVG. DISTANCE</h6>
-          <h4 className="planet-distance margin-bottom">
-            {distance.toUpperCase()}
-          </h4>
-          <h6 className="sub-header">EST. TRAVEL TIME</h6>
-          <h4 className="planet-travel margin-bottom">
-            {travel.toUpperCase()}
-          </h4>
+          <div className="sub-headers">
+            <div className="avg-distance">
+              <h6 className="sub-header">AVG. DISTANCE</h6>
+              <h4 className="planet-distance margin-bottom">
+                {distance.toUpperCase()}
+              </h4>
+            </div>
+            <div className="travel-time">
+              <h6 className="sub-header">EST. TRAVEL TIME</h6>
+              <h4 className="planet-travel margin-bottom">
+                {travel.toUpperCase()}
+              </h4>
+            </div>
+          </div>
         </div>
       </div>
     </Wrapper>
@@ -164,7 +170,57 @@ const Wrapper = styled.section`
 
   @media (min-width: 768px) {
     .flex-container {
-      padding-top: 10rem;
+      padding-top: 7rem;
+
+      .header {
+        font-size: 2.7rem;
+        margin-bottom: 5rem;
+      }
+
+      .planet-image {
+        width: 40%;
+        margin-bottom: 5rem;
+      }
+
+      .links {
+        gap: 4.5rem;
+        font-size: 2.1rem;
+        margin-bottom: 5rem;
+
+        li {
+          a {
+            &::after {
+              top: 4rem;
+            }
+          }
+        }
+      }
+
+      .planet-name {
+        font-size: 10rem;
+      }
+
+      .planet-description {
+        max-width: 70%;
+        font-size: 2.1rem;
+        &::after {
+          top: 16rem;
+        }
+      }
+
+      .sub-headers {
+        display: flex;
+        gap: 13rem;
+        .avg-distance,
+        .travel-time {
+          h6 {
+            font-size: 1.7rem;
+          }
+          h4 {
+            font-size: 3.2rem;
+          }
+        }
+      }
     }
   }
 `;

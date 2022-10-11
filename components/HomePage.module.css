@@ -4,6 +4,7 @@
   background-image: url("../public/assets/home/background-home-mobile.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+  /* height: 100vh; */
   background-position: bottom center;
 }
 
@@ -14,8 +15,8 @@
   }
 }
 
-/* @media (min-width: 45em) {
+@media (min-width: 1440px) {
   .hero {
     background-image: url("../public/assets/home/background-home-desktop.jpg");
   }
-} */
+}

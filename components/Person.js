@@ -18,8 +18,8 @@ const Person = ({ data }) => {
       <div className={style.background}>
         <Navigation />
 
-        <h6 className="header">MEET YOUR CREW</h6>
         <section className="flex-container">
+          <h6 className="header">MEET YOUR CREW</h6>
           <div className="image-container">
             <img className="crew-image" src={images.webp} alt="" />
           </div>
@@ -157,6 +157,51 @@ const Wrapper = styled.section`
       padding: 0 3rem;
       font-weight: 100;
       color: var(--clr-blue);
+    }
+  }
+
+  @media (min-width: 768px) {
+    .flex-container {
+      display: grid;
+      grid-auto-rows: min-content;
+      padding-top: 7rem;
+      place-items: center;
+      padding-bottom: 0;
+      .header {
+        font-size: 2.7rem;
+        margin-bottom: 5rem;
+        grid-row: 1 / 2;
+      }
+
+      .crew-role {
+        grid-row: 2 / 3;
+        font-size: 3rem;
+      }
+      .crew-name {
+        grid-row: 3 / 4;
+        font-size: 4.5rem;
+      }
+      .crew-bio {
+        grid-row: 4 / 5;
+        max-width: 65%;
+        font-size: 2.2rem;
+        padding-bottom: 5rem;
+      }
+
+      ul {
+        grid-row: 5 / 6;
+        padding-bottom: 3rem;
+      }
+      .image-container {
+        margin-bottom: 0;
+        .crew-image {
+          grid-row: 6 / 7;
+          width: 75%;
+        }
+        &::after {
+          height: 0;
+        }
+      }
     }
   }
 `;

@@ -4,4 +4,18 @@
   background-repeat: repeat;
   background-size: cover;
   background-position: bottom center;
+  /* height: 100vh; */
+}
+
+@media (min-width: 768px) {
+  .background {
+    background-position: center center;
+    background-image: url("../public/assets/crew/background-crew-tablet.jpg");
+  }
+}
+
+@media (min-width: 1440px) {
+  .background {
+    background-image: url("../public/assets/crew/background-crew-desktop.jpg");
+  }
 }

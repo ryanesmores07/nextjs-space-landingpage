@@ -4,3 +4,16 @@
   background-size: cover;
   background-position: top center;
 }
+
+@media (min-width: 768px) {
+  .background {
+    background-position: center center;
+    background-image: url("../public/assets/technology/background-technology-tablet.jpg");
+  }
+}
+
+@media (min-width: 1440px) {
+  .background {
+    background-image: url("../public/assets/technology/background-technology-desktop.jpg");
+  }
+}

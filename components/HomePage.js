@@ -39,7 +39,6 @@ const HomePage = () => {
 const Wrapper = styled.section`
   max-width: 100%;
   color: var(--clr-white);
-  margin: 0 auto;
   position: relative;
 
   .flex-container {
@@ -134,6 +133,44 @@ const Wrapper = styled.section`
 
       .explore {
         padding: 14rem 0 10rem;
+      }
+    }
+  }
+
+  @media (min-width: 1440px) {
+    position: relative;
+    .flex-container {
+      bottom: 1rem;
+      position: absolute;
+      /* background-color: red; */
+      display: flex;
+      align-items: flex-end;
+      .details {
+        align-items: flex-start;
+        text-align: left;
+        width: 50%;
+        padding-left: 15rem;
+        padding-bottom: 10rem;
+        h6 {
+          font-size: 2.8rem;
+          letter-spacing: 5px;
+        }
+        h1 {
+          font-size: 16rem;
+        }
+        p {
+          max-width: 95%;
+          letter-spacing: 1.5px;
+        }
+      }
+      .explore {
+        width: 50%;
+        justify-content: flex-end;
+        right: 15rem;
+        .text-container {
+          width: 30rem;
+          height: 30rem;
+        }
       }
     }
   }
