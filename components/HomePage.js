@@ -9,7 +9,7 @@ const HomePage = () => {
 
   return (
     <Wrapper>
-      <div className={style.hero}>
+      <div className={style.background}>
         <Navigation />
         <div className="flex-container">
           <div className="details">
@@ -138,10 +138,8 @@ const Wrapper = styled.section`
   }
 
   @media (min-width: 1440px) {
-    position: relative;
     .flex-container {
       bottom: 1rem;
-      position: absolute;
       /* background-color: red; */
       display: flex;
       align-items: flex-end;

@@ -1,4 +1,4 @@
-.hero {
+.background {
   background: linear-gradient(rgb(164, 98, 41), steelblue);
 
   background-image: url("../public/assets/home/background-home-mobile.jpg");
@@ -9,14 +9,15 @@
 }
 
 @media (min-width: 768px) {
-  .hero {
+  .background {
     background-position: center center;
     background-image: url("../public/assets/home/background-home-tablet.jpg");
   }
 }
 
 @media (min-width: 1440px) {
-  .hero {
+  .background {
     background-image: url("../public/assets/home/background-home-desktop.jpg");
+    background-position: center center;
   }
 }
