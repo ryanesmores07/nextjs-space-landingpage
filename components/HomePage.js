@@ -49,6 +49,7 @@ const Wrapper = styled.section`
       margin: 0 auto;
 
       h6 {
+        color: var(--clr-blue);
         font-size: 2rem;
         font-weight: 100;
       }
@@ -140,7 +141,9 @@ const Wrapper = styled.section`
   @media (min-width: 1440px) {
     .flex-container {
       bottom: 1rem;
+      position: absolute;
       /* background-color: red; */
+      bottom: 2rem;
       display: flex;
       align-items: flex-end;
       .details {
@@ -150,15 +153,16 @@ const Wrapper = styled.section`
         padding-left: 15rem;
         padding-bottom: 10rem;
         h6 {
-          font-size: 2.8rem;
+          font-size: 2.5rem;
           letter-spacing: 5px;
         }
         h1 {
           font-size: 16rem;
+          /* line-height: 1.4; */
         }
         p {
           max-width: 95%;
-          letter-spacing: 1.5px;
+          font-size: 2.1rem;
         }
       }
       .explore {
@@ -166,8 +170,9 @@ const Wrapper = styled.section`
         justify-content: flex-end;
         right: 15rem;
         .text-container {
-          width: 30rem;
-          height: 30rem;
+          width: 27rem;
+          height: 27rem;
+          font-size: 3rem;
         }
       }
     }

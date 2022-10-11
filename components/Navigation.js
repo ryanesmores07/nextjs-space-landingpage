@@ -228,6 +228,31 @@ const Wrapper = styled.nav`
       }
     }
   }
+
+  @media (min-width: 1440px) {
+    .sidebar-large {
+      top: 5rem;
+      /* position: relative; */
+      .links {
+        &::before {
+          content: "";
+          position: absolute;
+          top: 5.5rem;
+          left: -40rem;
+          width: 50%;
+          height: 1px;
+          background-color: var(--clr-white);
+          opacity: 0.2;
+        }
+      }
+    }
+    .container {
+      .logo {
+        margin-top: 5rem;
+        margin-left: 3rem;
+      }
+    }
+  }
 `;
 
 export default Navigation;
