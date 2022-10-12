@@ -141,7 +141,8 @@ const Wrapper = styled.section`
   @media (min-width: 1440px) {
     .flex-container {
       bottom: 1rem;
-      position: absolute;
+      padding-top: 22rem;
+      /* position: absolute; */
       /* background-color: red; */
       bottom: 2rem;
       display: flex;
