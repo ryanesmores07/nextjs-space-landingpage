@@ -12,8 +12,10 @@
   }
 }
 
-@media (min-width: 1440px) {
+@media (min-width: 1200px) {
   .background {
     background-image: url("../public/assets/technology/background-technology-desktop.jpg");
+    /* overflow: hidden; */
+    /* height: 100vh; */
   }
 }

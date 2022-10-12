@@ -4,8 +4,9 @@
   background-image: url("../public/assets/home/background-home-mobile.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  /* height: 100vh; */
   background-position: bottom center;
+  height: 100vh;
+  /* overflow: hidden; */
 }
 
 @media (min-width: 768px) {
@@ -15,7 +16,7 @@
   }
 }
 
-@media (min-width: 1440px) {
+@media (min-width: 1200px) {
   .background {
     background-image: url("../public/assets/home/background-home-desktop.jpg");
     background-position: center center;

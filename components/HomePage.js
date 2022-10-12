@@ -39,7 +39,7 @@ const HomePage = () => {
 const Wrapper = styled.section`
   max-width: 100%;
   color: var(--clr-white);
-  position: relative;
+  display: block;
 
   .flex-container {
     .details {
@@ -73,7 +73,6 @@ const Wrapper = styled.section`
       display: flex;
       justify-content: center;
       /* background-color: red; */
-      position: relative;
 
       .text-container {
         width: 21rem;
@@ -138,13 +137,9 @@ const Wrapper = styled.section`
     }
   }
 
-  @media (min-width: 1440px) {
+  @media (min-width: 1200px) {
     .flex-container {
-      bottom: 1rem;
-      padding-top: 22rem;
-      /* position: absolute; */
-      /* background-color: red; */
-      bottom: 2rem;
+      padding-top: 17rem;
       display: flex;
       align-items: flex-end;
       .details {
@@ -169,7 +164,7 @@ const Wrapper = styled.section`
       .explore {
         width: 50%;
         justify-content: flex-end;
-        right: 15rem;
+        padding-right: 15rem;
         .text-container {
           width: 27rem;
           height: 27rem;

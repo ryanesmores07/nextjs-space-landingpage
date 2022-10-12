@@ -223,6 +223,9 @@ const Wrapper = styled.section`
       }
     }
   }
+
+  @media (min-width: 1200px) {
+  }
 `;
 
 export default Planet;

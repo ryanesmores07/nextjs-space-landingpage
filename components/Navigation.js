@@ -39,16 +39,16 @@ const Navigation = () => {
         )}
         <aside className="sidebar-large">
           <ul role="list" className="links">
-            <li>
+            <li className="counter">
               <Link href="/"> HOME</Link>
             </li>
-            <li>
+            <li className="counter">
               <Link href="/Moon"> DESTINATION</Link>
             </li>
-            <li>
+            <li className="counter">
               <Link href="/crew"> CREW</Link>
             </li>
-            <li>
+            <li className="counter">
               <Link href="/technology"> TECHNOLOGY</Link>
             </li>
           </ul>
@@ -229,11 +229,12 @@ const Wrapper = styled.nav`
     }
   }
 
-  @media (min-width: 1440px) {
+  @media (min-width: 1200px) {
     .sidebar-large {
       top: 5rem;
       /* position: relative; */
       .links {
+        counter-reset: counters;
         &::before {
           content: "";
           position: absolute;
@@ -243,6 +244,16 @@ const Wrapper = styled.nav`
           height: 1px;
           background-color: var(--clr-white);
           opacity: 0.2;
+        }
+
+        .counter::before {
+          counter-increment: counters;
+          content: "0" counter(counters);
+          font-weight: 700;
+        }
+
+        a {
+          position: relative;
         }
       }
     }
