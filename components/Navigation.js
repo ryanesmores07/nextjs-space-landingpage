@@ -229,14 +229,12 @@ const Wrapper = styled.nav`
   @media (min-width: 1200px) {
     .container {
       .logo {
-        width: 6rem;
-        height: 6rem;
         margin-top: 4rem;
         margin-left: 3rem;
       }
       .sidebar-large {
         top: 4rem;
-        bottom: 1rem;
+        bottom: 0;
         .links {
           counter-reset: counters;
           &::before {
@@ -255,9 +253,13 @@ const Wrapper = styled.nav`
             content: "0" counter(counters);
             font-weight: 700;
           }
-
-          a {
-            position: relative;
+          li {
+            a {
+              position: relative;
+              &::after {
+                transform: translateX(-1.1rem) scaleX(1.3);
+              }
+            }
           }
         }
       }

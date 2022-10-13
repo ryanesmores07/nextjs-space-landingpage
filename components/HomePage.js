@@ -166,8 +166,8 @@ const Wrapper = styled.section`
         justify-content: flex-end;
         padding-right: 15rem;
         .text-container {
-          width: 27rem;
-          height: 27rem;
+          width: 29rem;
+          height: 29rem;
           font-size: 3rem;
         }
       }

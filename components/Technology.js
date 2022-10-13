@@ -175,7 +175,7 @@ const Wrapper = styled.section`
       }
 
       .image-container {
-        .tech-image {
+        .tech-image-landscape {
           padding-bottom: 3rem;
         }
       }

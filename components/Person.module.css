@@ -4,7 +4,8 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: bottom center;
-  /* height: 100vh; */
+  overflow: auto;
+  height: 100vh;
 }
 
 @media (min-width: 768px) {
@@ -23,6 +24,5 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
-    overflow: auto;
   }
 }

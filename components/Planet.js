@@ -159,9 +159,9 @@ const Wrapper = styled.section`
           position: absolute;
           top: 20rem;
           left: 0;
-          height: 0.04px;
+          height: 1px;
           transform: scaleX(1.1);
-          opacity: 0.4;
+          opacity: 0.2;
           text-align: center;
           width: 100%;
           background-color: var(--clr-white);

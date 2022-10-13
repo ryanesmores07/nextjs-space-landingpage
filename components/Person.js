@@ -94,33 +94,6 @@ const Wrapper = styled.section`
     text-align: center;
     padding-bottom: 10rem;
 
-    ul {
-      .active-state {
-        outline-style: initial;
-        opacity: 1;
-      }
-      gap: 2rem;
-      margin-bottom: 3.5rem;
-      button {
-        border: none;
-        color: var(--clr-white);
-        background: none;
-        opacity: 0.3;
-        transition: opacity 250ms ease-out;
-        cursor: pointer;
-
-        /* &:focus,
-        &:active {
-          outline-style: initial;
-          opacity: 1;
-        } */
-
-        &:hover {
-          opacity: 0.6;
-        }
-      }
-    }
-
     .image-container {
       display: flex;
       justify-content: center;
@@ -139,26 +112,50 @@ const Wrapper = styled.section`
         opacity: 0.2;
       }
     }
+    .info-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      ul {
+        .active-state {
+          outline-style: initial;
+          opacity: 1;
+        }
+        gap: 2rem;
+        margin-bottom: 3.5rem;
+        button {
+          border: none;
+          color: var(--clr-white);
+          background: none;
+          opacity: 0.3;
+          transition: opacity 250ms ease-out;
+          cursor: pointer;
 
-    .crew-role {
-      font-size: 2rem;
-      opacity: 0.5;
-    }
+          &:hover {
+            opacity: 0.6;
+          }
+        }
+      }
+      .crew-role {
+        font-size: 2rem;
+        opacity: 0.5;
+      }
 
-    .crew-name {
-      font-size: 3rem;
-      opacity: 0.8;
-      margin-bottom: 1.6rem;
-    }
+      .crew-name {
+        font-size: 3rem;
+        opacity: 0.8;
+        margin-bottom: 1.6rem;
+      }
 
-    .crew-bio {
-      letter-spacing: 1.2px;
-      font-size: 1.9rem;
-      line-height: 1.7;
-      max-width: 60ch;
-      padding: 0 3rem;
-      font-weight: 100;
-      color: var(--clr-blue);
+      .crew-bio {
+        letter-spacing: 1.2px;
+        font-size: 1.9rem;
+        line-height: 1.7;
+        max-width: 60ch;
+        padding: 0 3rem;
+        font-weight: 100;
+        color: var(--clr-blue);
+      }
     }
   }
 
@@ -236,7 +233,7 @@ const Wrapper = styled.section`
         }
         .crew-bio {
           padding-left: 0;
-          max-width: 78%;
+          max-width: 90%;
           margin-bottom: 5rem;
         }
 
@@ -256,11 +253,10 @@ const Wrapper = styled.section`
         grid-row: 1 / 4;
         justify-items: end;
         /* position: absolute; */
-        /* bottom: 0; */
-        /* right: 13rem; */
-
+        bottom: -1rem;
+        left: 5rem;
         .crew-image {
-          width: 70%;
+          width: 95%;
         }
       }
     }
