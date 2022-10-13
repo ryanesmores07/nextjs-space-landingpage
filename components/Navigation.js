@@ -216,7 +216,8 @@ const Wrapper = styled.nav`
                 transition: opacity 150ms ease-in;
               }
 
-              &:hover::after {
+              &:hover::after,
+              &:focus::after {
                 opacity: 1;
               }
             }

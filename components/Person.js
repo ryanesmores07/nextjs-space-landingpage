@@ -207,7 +207,7 @@ const Wrapper = styled.section`
 
   @media (min-width: 1200px) {
     .flex-container {
-      grid-template-columns: 17rem 1fr 1fr 17rem;
+      grid-template-columns: 17rem 1fr max-content 17rem;
       justify-content: left;
 
       .header {
@@ -229,11 +229,14 @@ const Wrapper = styled.section`
           font-size: 3.5rem;
         }
         .crew-name {
-          font-size: 6rem;
+          font-size: 5rem;
+          letter-spacing: 1.5px;
         }
         .crew-bio {
           padding-left: 0;
-          max-width: 90%;
+          font-size: 2rem;
+          letter-spacing: 2px;
+          max-width: 70%;
           margin-bottom: 5rem;
         }
 
@@ -253,10 +256,12 @@ const Wrapper = styled.section`
         grid-row: 1 / 4;
         justify-items: end;
         /* position: absolute; */
-        bottom: -1rem;
+        bottom: -5rem;
         left: 5rem;
+        /* right: 12rem;
+        bottom: 0; */
         .crew-image {
-          width: 95%;
+          width: 100%;
         }
       }
     }
