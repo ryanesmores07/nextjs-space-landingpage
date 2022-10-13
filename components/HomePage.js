@@ -139,7 +139,7 @@ const Wrapper = styled.section`
 
   @media (min-width: 1200px) {
     .flex-container {
-      padding-top: 17rem;
+      padding-top: 20rem;
       display: flex;
       align-items: flex-end;
       .details {

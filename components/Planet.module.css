@@ -15,5 +15,8 @@
 @media (min-width: 1200px) {
   .background {
     background-image: url("../public/assets/destination/background-destination-desktop.jpg");
+    background-position: center center;
+    height: 100vh;
+    overflow: auto;
   }
 }

@@ -23,44 +23,46 @@ const Person = ({ data }) => {
           <div className="image-container">
             <img className="crew-image" src={images.webp} alt="" />
           </div>
-          <ul role="list" style={{ display: "flex" }}>
-            <li>
-              <button
-                onClick={() => setIndex(0)}
-                className={index === 0 ? "active-state" : ""}
-                ref={focus}
-              >
-                ⚪️
-              </button>
-            </li>
-            <li>
-              <button
-                onClick={() => setIndex(1)}
-                className={index === 1 ? "active-state" : ""}
-              >
-                ⚪️
-              </button>
-            </li>
-            <li>
-              <button
-                onClick={() => setIndex(2)}
-                className={index === 2 ? "active-state" : ""}
-              >
-                ⚪️
-              </button>
-            </li>
-            <li>
-              <button
-                onClick={() => setIndex(3)}
-                className={index === 3 ? "active-state" : ""}
-              >
-                ⚪️
-              </button>
-            </li>
-          </ul>
-          <h4 className="crew-role">{role.toUpperCase()}</h4>
-          <h3 className="crew-name">{name.toUpperCase()}</h3>
-          <p className="crew-bio">{bio}</p>
+          <div className="info-container">
+            <ul role="list" style={{ display: "flex" }}>
+              <li>
+                <button
+                  onClick={() => setIndex(0)}
+                  className={index === 0 ? "active-state" : ""}
+                  ref={focus}
+                >
+                  ⚪️
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => setIndex(1)}
+                  className={index === 1 ? "active-state" : ""}
+                >
+                  ⚪️
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => setIndex(2)}
+                  className={index === 2 ? "active-state" : ""}
+                >
+                  ⚪️
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => setIndex(3)}
+                  className={index === 3 ? "active-state" : ""}
+                >
+                  ⚪️
+                </button>
+              </li>
+            </ul>
+            <h4 className="crew-role">{role.toUpperCase()}</h4>
+            <h3 className="crew-name">{name.toUpperCase()}</h3>
+            <p className="crew-bio">{bio}</p>
+          </div>
         </section>
       </div>
     </Wrapper>
@@ -163,36 +165,37 @@ const Wrapper = styled.section`
   @media (min-width: 768px) {
     .flex-container {
       display: grid;
-      grid-auto-rows: min-content;
+      grid-template-rows: repeat(3, min-content);
       padding-top: 7rem;
       place-items: center;
       padding-bottom: 0;
       .header {
         font-size: 2.7rem;
         margin-bottom: 5rem;
-        grid-row: 1 / 2;
+      }
+      .info-container {
+        display: grid;
+        place-items: center;
+        .crew-role {
+          font-size: 3rem;
+        }
+        .crew-name {
+          font-size: 4.5rem;
+        }
+        .crew-bio {
+          max-width: 65%;
+          font-size: 2.2rem;
+          padding-bottom: 5rem;
+        }
+
+        ul {
+          grid-row: 4 / 5;
+          /* padding-bottom: 3rem; */
+        }
       }
 
-      .crew-role {
-        grid-row: 2 / 3;
-        font-size: 3rem;
-      }
-      .crew-name {
-        grid-row: 3 / 4;
-        font-size: 4.5rem;
-      }
-      .crew-bio {
-        grid-row: 4 / 5;
-        max-width: 65%;
-        font-size: 2.2rem;
-        padding-bottom: 5rem;
-      }
-
-      ul {
-        grid-row: 5 / 6;
-        padding-bottom: 3rem;
-      }
       .image-container {
+        grid-row: 3 / 4;
         margin-bottom: 0;
         .crew-image {
           grid-row: 6 / 7;
@@ -200,6 +203,64 @@ const Wrapper = styled.section`
         }
         &::after {
           height: 0;
+        }
+      }
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .flex-container {
+      grid-template-columns: 17rem 1fr 1fr 17rem;
+      justify-content: left;
+
+      .header {
+        grid-column: 2 / 3;
+        align-self: start;
+        justify-self: start;
+        font-size: 3rem;
+        letter-spacing: 6px;
+      }
+      .info-container {
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;
+        text-align: left;
+        justify-items: start;
+        align-self: start;
+
+        .crew-role {
+          padding-top: 7rem;
+          font-size: 3.5rem;
+        }
+        .crew-name {
+          font-size: 6rem;
+        }
+        .crew-bio {
+          padding-left: 0;
+          max-width: 78%;
+          margin-bottom: 5rem;
+        }
+
+        ul {
+          gap: 3rem;
+
+          li {
+            button {
+              font-size: 1.5rem;
+            }
+          }
+        }
+      }
+
+      .image-container {
+        grid-column: 3 / 4;
+        grid-row: 1 / 4;
+        justify-items: end;
+        /* position: absolute; */
+        /* bottom: 0; */
+        /* right: 13rem; */
+
+        .crew-image {
+          width: 70%;
         }
       }
     }

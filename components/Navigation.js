@@ -98,9 +98,6 @@ const Wrapper = styled.nav`
     }
   }
 
-  .open {
-  }
-
   .sidebar {
     background-color: transparent;
     width: 65%;
@@ -168,60 +165,60 @@ const Wrapper = styled.nav`
     .toggle {
       display: none;
     }
-
-    .sidebar-large {
-      display: flex;
-      position: absolute;
-      background-color: transparent;
-      justify-content: center;
-      width: 60%;
-      height: 11rem;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      padding: 4rem;
-      backdrop-filter: blur(1rem);
-
-      &::before {
-        background-color: var(--clr-white);
-        opacity: 0.05;
-        content: "";
-        position: absolute;
-        z-index: -1;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
-      }
-
-      .links {
+    .container {
+      position: relative;
+      .sidebar-large {
         display: flex;
-        column-gap: 5rem;
+        position: absolute;
+        background-color: transparent;
+        justify-content: center;
+        width: 60%;
+        right: 0;
+        bottom: 0;
+        padding: 4rem;
+        backdrop-filter: blur(1rem);
 
-        li {
-          font-family: var(--ff-content);
-          font-weight: 100;
-          font-size: 1.8rem;
-          a {
+        &::before {
+          background-color: var(--clr-white);
+          opacity: 0.05;
+          content: "";
+          position: absolute;
+          z-index: -1;
+          top: 0;
+          left: 0;
+          bottom: 0;
+          right: 0;
+        }
+
+        .links {
+          display: flex;
+          column-gap: 5rem;
+
+          li {
             font-family: var(--ff-content);
-            position: relative;
-            letter-spacing: 2px;
-            color: var(--clr-white);
+            font-weight: 100;
+            font-size: 1.8rem;
+            a {
+              font-family: var(--ff-content);
+              position: relative;
+              letter-spacing: 2px;
+              color: var(--clr-white);
 
-            &::after {
-              content: "";
-              position: absolute;
-              left: 0;
-              bottom: -5rem;
-              background-color: white;
-              height: 5px;
-              width: 100%;
-              opacity: 0;
-              transition: opacity 150ms ease-in;
-            }
+              &::after {
+                content: "";
+                position: absolute;
+                left: 0;
+                bottom: -5rem;
+                background-color: white;
+                height: 5px;
+                width: 100%;
+                opacity: 0;
+                transition: opacity 150ms ease-in;
+              }
 
-            &:hover::after {
-              opacity: 1;
+              &:hover::after {
+                opacity: 1;
+              }
             }
           }
         }
@@ -230,37 +227,39 @@ const Wrapper = styled.nav`
   }
 
   @media (min-width: 1200px) {
-    .sidebar-large {
-      top: 5rem;
-      /* position: relative; */
-      .links {
-        counter-reset: counters;
-        &::before {
-          content: "";
-          position: absolute;
-          top: 5.5rem;
-          left: -40rem;
-          width: 50%;
-          height: 1px;
-          background-color: var(--clr-white);
-          opacity: 0.2;
-        }
-
-        .counter::before {
-          counter-increment: counters;
-          content: "0" counter(counters);
-          font-weight: 700;
-        }
-
-        a {
-          position: relative;
-        }
-      }
-    }
     .container {
       .logo {
-        margin-top: 5rem;
+        width: 6rem;
+        height: 6rem;
+        margin-top: 4rem;
         margin-left: 3rem;
+      }
+      .sidebar-large {
+        top: 4rem;
+        bottom: 1rem;
+        .links {
+          counter-reset: counters;
+          &::before {
+            content: "";
+            position: absolute;
+            top: 5.5rem;
+            left: -40rem;
+            width: 50%;
+            height: 1px;
+            background-color: var(--clr-white);
+            opacity: 0.2;
+          }
+
+          .counter::before {
+            counter-increment: counters;
+            content: "0" counter(counters);
+            font-weight: 700;
+          }
+
+          a {
+            position: relative;
+          }
+        }
       }
     }
   }

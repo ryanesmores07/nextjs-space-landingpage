@@ -14,7 +14,12 @@ const Technology = ({ data }) => {
         <div className="flex-container">
           <h6 className="header">SPACE LAUNCH 101</h6>
           <div className="image-container">
-            <img className="tech-image" src={images.landscape} alt="" />
+            <img
+              className="tech-image-landscape"
+              src={images.landscape}
+              alt=""
+            />
+            <img src={images.portrait} alt="" className="tech-image-portrait" />
           </div>
           <div className="number-buttons">
             <ul role="list" style={{ display: "flex" }}>
@@ -44,9 +49,11 @@ const Technology = ({ data }) => {
               </li>
             </ul>
           </div>
-          <h4 className="tech-term">THE TERMINOLOGY...</h4>
-          <h3 className="tech-name">{name.toUpperCase()}</h3>
-          <p className="tech-description">{description}</p>
+          <div className="info-container">
+            <h4 className="tech-term">THE TERMINOLOGY...</h4>
+            <h3 className="tech-name">{name.toUpperCase()}</h3>
+            <p className="tech-description">{description}</p>
+          </div>
         </div>
       </div>
     </Wrapper>
@@ -78,13 +85,16 @@ const Wrapper = styled.section`
       margin: 0;
       overflow: hidden;
       padding-bottom: 1rem;
-      .tech-image {
+      .tech-image-landscape {
         background-size: cover;
         /* height: 23rem; */
         width: 100vw;
         background-position: right center;
         transform: scaleX(1.01);
         transform-origin: left;
+      }
+      .tech-image-portrait {
+        display: none;
       }
     }
 
@@ -121,29 +131,34 @@ const Wrapper = styled.section`
       }
     }
 
-    .tech-term {
-      font-size: 1.8rem;
-      color: var(--clr-blue);
-      letter-spacing: 3px;
-      font-family: var(--ff-content);
-      margin-bottom: 1rem;
-    }
+    .info-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .tech-term {
+        font-size: 1.8rem;
+        color: var(--clr-blue);
+        letter-spacing: 3px;
+        font-family: var(--ff-content);
+        margin-bottom: 1rem;
+      }
 
-    .tech-name {
-      font-size: 3rem;
-      opacity: 0.8;
-      margin-bottom: 1.6rem;
-    }
+      .tech-name {
+        font-size: 3rem;
+        opacity: 0.8;
+        margin-bottom: 1.6rem;
+      }
 
-    .tech-description {
-      padding: 0 3rem;
-      max-width: 70ch;
-      text-align: center;
-      font-weight: 100;
-      letter-spacing: 1.2px;
-      font-size: 1.9rem;
-      line-height: 1.7;
-      color: var(--clr-blue);
+      .tech-description {
+        padding: 0 3rem;
+        max-width: 70ch;
+        text-align: center;
+        font-weight: 100;
+        letter-spacing: 1.2px;
+        font-size: 1.9rem;
+        line-height: 1.7;
+        color: var(--clr-blue);
+      }
     }
   }
 
@@ -175,15 +190,78 @@ const Wrapper = styled.section`
           }
         }
       }
+      .info-container {
+        .tech-term {
+          font-size: 2rem;
+        }
+        .tech-name {
+          font-size: 5rem;
+        }
+        .tech-description {
+          max-width: 60%;
+        }
+      }
+    }
+  }
 
-      .tech-term {
-        font-size: 2rem;
+  @media (min-width: 1200px) {
+    .flex-container {
+      display: grid;
+      grid-template-rows: repeat(2, min-content);
+      grid-template-columns: 10rem min-content 1fr 1fr;
+
+      .header {
+        grid-row: 1 / 2;
+        grid-column: 2 / 4;
+        justify-self: start;
+        letter-spacing: 5px;
+        padding-left: 3.5rem;
+        align-self: flex-start;
       }
-      .tech-name {
-        font-size: 5rem;
+      .number-buttons {
+        grid-row: 2 / 3;
+        grid-column: 2 / 3;
+        align-self: end;
+        ul {
+          flex-direction: column;
+          button {
+            width: 8rem;
+            height: 8rem;
+            font-size: 3rem;
+          }
+        }
       }
-      .tech-description {
-        max-width: 60%;
+      .info-container {
+        grid-row: 2 / 3;
+        grid-column: 3 / 4;
+        align-items: flex-start;
+        padding-left: 5rem;
+
+        .tech-term {
+          font-weight: 100;
+        }
+        .tech-name {
+          font-size: 5rem;
+          letter-spacing: 1.5px;
+          font-size: 5.5rem;
+        }
+        .tech-description {
+          text-align: left;
+          padding: 0;
+          max-width: 85%;
+        }
+      }
+      .image-container {
+        grid-row: 1 / 3;
+        grid-column: 4 / 5;
+        justify-self: end;
+        padding-top: 5rem;
+        .tech-image-landscape {
+          display: none;
+        }
+        .tech-image-portrait {
+          display: block;
+        }
       }
     }
   }
